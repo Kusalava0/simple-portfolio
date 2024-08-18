@@ -28,17 +28,6 @@ const TABS = [
     ),
   },
   {
-    id: 'portfolio',
-    label: 'Portfolio',
-    icon: <SquareLibrary className='h-5 w-5' />,
-    content: (
-      <div>
-        <h2 className="text-3xl font-bold mb-6 text-center">My Projects</h2>
-        <ProjectGallery />
-      </div>
-    ),
-  },
-  {
     id: 'experience',
     label: 'Experience',
     icon: <Boxes className='h-5 w-5' />,
@@ -46,6 +35,17 @@ const TABS = [
       <div>
         <h2 className="text-3xl font-bold mb-6 text-center">My Experience</h2>
         <Timeline defaultColor="" />
+      </div>
+    ),
+  },
+  {
+    id: 'portfolio',
+    label: 'Portfolio',
+    icon: <SquareLibrary className='h-5 w-5' />,
+    content: (
+      <div>
+        <h2 className="text-3xl font-bold mb-6 text-center">My Projects</h2>
+        <ProjectGallery />
       </div>
     ),
   },

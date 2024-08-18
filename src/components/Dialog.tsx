@@ -116,7 +116,7 @@ function ProjectDialog({ project }: ProjectDialogProps) {
         style={{
           borderRadius: '12px',
         }}
-        className='flex max-w-[270px] flex-col overflow-hidden border border-zinc-950/10 bg-black text-white dark:border-zinc-50/10 dark:bg-zinc-900'
+        className='flex max-w-[270px] flex-col overflow-hidden border-2 border-zinc-950/10 bg-black border-gray-800 text-white shadow-lg shadow-gray-900 dark:border-zinc-50/10 dark:bg-zinc-900'
       >
         <DialogImage
           src={project.image}
