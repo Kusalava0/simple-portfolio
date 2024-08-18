@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import AnimatedBackground from '@/components/core/animated-background';
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt } from 'react-icons/fa';
