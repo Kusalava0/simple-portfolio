@@ -14,7 +14,7 @@ const timelineElements = [
     {
       id: 2,
       title: "Front-end Developer Intern",
-      location: "Hyderabad, India",
+      location: "Remote (based in Hyderabad, India)",
       description: "Worked on migrating from React to SvelteKit",
       buttonText: "Details",
       date: "2023 May-2023 August",
@@ -25,8 +25,8 @@ const timelineElements = [
     },
     {
       id: 3,
-      title: "Software Developer Job",
-      location: "Hyderabad, India",
+      title: "SDE at Amikus AI",
+      location: "Remote (based in Hyderabad, India)",
       description: "Led frontend development and product design initiatives",
       buttonText: "Details",
       date: "2023 September-Present",
@@ -37,8 +37,8 @@ const timelineElements = [
     },
     {
       id: 5,
-      title: "Started Freelancing",
-      location: "Hyderabad, India",
+      title: "Part-time Freelancer",
+      location: "Remote (based in Hyderabad, India)",
       description: "Began working as a freelance developer",
       buttonText: "Details",
       date: "2024-present",
