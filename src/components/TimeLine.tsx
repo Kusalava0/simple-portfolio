@@ -117,6 +117,8 @@ export default function Timeline({ defaultColor }: any) {
           "bg-orange-500",
         ];
 
+        console.log(colors)
+
         const color = defaultColor || `bg-${element.color}-500`;
 
         return (         
