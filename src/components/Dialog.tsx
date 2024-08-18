@@ -37,7 +37,7 @@ const data = [
     title: "Symplify",
     github: 'https://github.com/Kusalava0/Symplify-scheduler',
     demo: 'https://www.loom.com/share/8af37faa13794766ba1f517354cf1c30?sid=136b35e0-629a-4c2d-844e-5dc5d0ac0bb9',
-    description: "A 36-hour Hackathon winning project for detecting endangered species and sending real-time alerts to prevent poaching."
+    description: "A free lance project which is a comprehensive React-based clinic management system, handling appointments, patient data, employee management, and financial operations."
   },
   {
     id: 1,
