@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimatedBackground from '@/components/core/animated-background';
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiNextdotjs, SiSvelte, SiDjango, SiFastapi, SiMaterialdesign, SiTailwindcss, SiDocker, SiGooglecloud, SiGit, SiJenkins, SiExpress, SiMongodb, SiAmazonaws, SiGraphql } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiNextdotjs, SiSvelte, SiDjango, SiFastapi, SiMaterialdesign, SiTailwindcss, SiDocker, SiGooglecloud, SiGit, SiJenkins, SiExpress, SiMongodb, SiAmazon, SiGraphql } from 'react-icons/si';
 import { TbBrandGolang, TbApi, TbChartLine } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 
@@ -62,7 +62,7 @@ export function Skills() {
       id: 3,
       title: 'Cloud & DevOps',
       skills: [
-        { title: 'AWS', icon: SiAmazonaws, level: 'Experienced' },
+        { title: 'AWS', icon: SiAmazon, level: 'Experienced' },
         { title: 'Google Cloud', icon: SiGooglecloud, level: 'Intermediate' },
         { title: 'Docker', icon: SiDocker, level: 'Intermediate' },
         { title: 'CI/CD', icon: SiJenkins, level: 'Intermediate' },
