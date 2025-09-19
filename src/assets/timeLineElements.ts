@@ -19,7 +19,7 @@ const timelineElements = [
     buttonText: "Details",
     date: "2023 May-2023 August",
     icon: "amikus",
-    color: "purple",
+    color: "white",
     tech: ["JavaScript", "React", "Node.js", "Svelte", "Python", "HTML/CSS", "Git", "RESTful APIs"],
     logo: "amikus"
   },
@@ -31,7 +31,7 @@ const timelineElements = [
     buttonText: "Details",
     date: "2023 September-Present",
     icon: "amikus",
-    color: "yellow",
+    color: "white",
     tech: ["React", "SvelteKit", "TypeScript", "Go Lang", "Python", "Figma", "CI/CD", "Google Cloud Platform", "Kinde Auth"],
     logo: "amikus"
   },
@@ -46,6 +46,18 @@ const timelineElements = [
     color: "orange",
     tech: ["JavaScript", "React", "HTML", "CSS", "Python", "TypeScript", "Context API"],
     logo: "work"
+  },
+  {
+    id: 6,
+    title: "SDE at Pulsegen.io",
+    location: "Based in Hyderabad, India",
+    description: "Built end-to-end customer analytics platform with real-time churn prediction, optimized performance reducing page load times by 90%+.",
+    buttonText: "Details",
+    date: "2025 February-present",
+    icon: "pulsegen",
+    color: "white",
+    tech: ["TypeScript", "React", "Next.js", "Node.js", "Express", "MongoDB", "AWS", "RESTful APIs", "Data Visualization", "Microservices", "Algorithm Optimization"],
+    logo: "pulsegen"
   },
 ];
 

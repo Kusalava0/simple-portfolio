@@ -1,8 +1,8 @@
 import React from 'react';
 import AnimatedBackground from '@/components/core/animated-background';
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiNextdotjs, SiSvelte, SiDjango, SiFastapi, SiMaterialdesign, SiTailwindcss, SiDocker, SiGooglecloud, SiGit, SiJenkins } from 'react-icons/si';
-import { TbBrandGolang } from 'react-icons/tb';
+import { SiJavascript, SiTypescript, SiNextdotjs, SiSvelte, SiDjango, SiFastapi, SiMaterialdesign, SiTailwindcss, SiDocker, SiGooglecloud, SiGit, SiJenkins, SiExpress, SiMongodb, SiAmazonaws, SiGraphql } from 'react-icons/si';
+import { TbBrandGolang, TbApi, TbChartLine } from 'react-icons/tb';
 import { IconType } from 'react-icons';
 
 interface Skill {
@@ -48,21 +48,33 @@ export function Skills() {
       id: 2,
       title: 'Backend',
       skills: [
-        { title: 'Node.js', icon: FaNodeJs, level: 'Intermediate' },
+        { title: 'Node.js', icon: FaNodeJs, level: 'Experienced' },
+        { title: 'Express.js', icon: SiExpress, level: 'Experienced' },
         { title: 'Python', icon: FaPython, level: 'Experienced' },
         { title: 'Go', icon: TbBrandGolang, level: 'Intermediate' },
         { title: 'Django', icon: SiDjango, level: 'Intermediate' },
         { title: 'Fast API', icon: SiFastapi, level: 'Intermediate' },
+        { title: 'MongoDB', icon: SiMongodb, level: 'Experienced' },
+        { title: 'RESTful APIs', icon: TbApi, level: 'Experienced' },
       ],
     },
     {
       id: 3,
-      title: 'Tools',
+      title: 'Cloud & DevOps',
       skills: [
-        { title: 'Git', icon: SiGit, level: 'Experienced' },
-        { title: 'Docker', icon: SiDocker, level: 'Intermediate' },
+        { title: 'AWS', icon: SiAmazonaws, level: 'Experienced' },
         { title: 'Google Cloud', icon: SiGooglecloud, level: 'Intermediate' },
+        { title: 'Docker', icon: SiDocker, level: 'Intermediate' },
         { title: 'CI/CD', icon: SiJenkins, level: 'Intermediate' },
+        { title: 'Git', icon: SiGit, level: 'Experienced' },
+      ],
+    },
+    {
+      id: 4,
+      title: 'Data & Analytics',
+      skills: [
+        { title: 'Data Visualization', icon: TbChartLine, level: 'Experienced' },
+        { title: 'Analytics Platform', icon: SiGraphql, level: 'Experienced' },
       ],
     },
   ];

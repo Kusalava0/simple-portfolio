@@ -3,6 +3,7 @@ import timelineElements from "../assets/timeLineElements";
 import schoolIcon from "../assets/school.svg";
 import workIcon from "../assets/work.svg";
 import amikus from "../assets/amikus.svg";
+import pulseLogo from "../assets/pulse-icon.svg";
 import { Cursor } from '@/components/core/cursorprops';
 
 const MouseIcon = ({ color }: { color: string }) => {
@@ -37,11 +38,11 @@ const MouseIcon = ({ color }: { color: string }) => {
 function Cursor2({ element }: any) {
   const cursorContent = element.logo ? (
     <div className="flex items-center">
-      <img src={element.logo === "school" ? schoolIcon : (element.logo === "amikus" ? amikus : workIcon)} alt={element.title} className="w-8 h-8 sm:w-12 sm:h-12 p-1 sm:p-2 bg-white rounded-lg" />
-      <p className="ml-2 text-xs sm:text-sm">{element.logo === "school" ? "Graduation" : (element.logo === "amikus" ? "Amikus AI" : "Freelancer")}</p>
+      <img src={element.logo === "school" ? schoolIcon : (element.logo === "amikus" ? amikus : (element.logo === "pulsegen" ? pulseLogo : workIcon))} alt={element.title} className={`${element.logo === "pulsegen" ? "w-10 h-10 sm:w-16 sm:h-16" : "w-8 h-8 sm:w-12 sm:h-12"} p-1 sm:p-2 bg-white rounded-lg`} />
+      <p className="ml-2 text-xs sm:text-sm">{element.logo === "school" ? "Graduation" : (element.logo === "amikus" ? "Amikus AI" : (element.logo === "pulsegen" ? "PulseGen" : "Freelancer"))}</p>
     </div>
   ) : (
-    <div className={`rounded-[4px] bg-${element.color}-500 px-2 py-0.5 text-neutral-50 text-xs sm:text-sm`}>
+    <div className={`rounded-[4px] ${element.color === "white" ? "bg-white text-neutral-900" : `bg-${element.color}-500 text-neutral-50`} px-2 py-0.5 text-xs sm:text-sm`}>
       {element.title}
     </div>
   );
@@ -63,7 +64,7 @@ function Cursor2({ element }: any) {
           className='hidden sm:block left-12 top-4'
         >
           <div className="flex items-center">
-            <MouseIcon color={`bg-${element.color}-500`} />
+            <MouseIcon color={element.color === "white" ? "bg-white" : `bg-${element.color}-500`} />
             <div className="ml-2">
               {cursorContent}
             </div>
@@ -93,9 +94,9 @@ function Cursor2({ element }: any) {
             ))}
           </div>
           <motion.img
-            src={element.icon === "school" ? schoolIcon : workIcon}
+            src={element.icon === "school" ? schoolIcon : (element.icon === "amikus" ? amikus : (element.icon === "pulsegen" ? pulseLogo : workIcon))}
             alt="icon"
-            className={`bg-${element.color}-500 w-8 p-1 rounded-lg z-20 absolute -left-14 top-4 sm:hidden`}
+            className={`bg-${element.color}-500 ${element.icon === "pulsegen" ? "w-10" : "w-8"} p-1 rounded-lg z-20 absolute -left-14 top-4 sm:hidden`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           />
@@ -109,17 +110,8 @@ export default function Timeline({ defaultColor }: any) {
   return (
     <div className="container mx-auto px-4">
       {timelineElements.map((element, index) => {
-        const colors = [
-          "bg-red-500",
-          "bg-blue-500",
-          "bg-yellow-500",
-          "bg-purple-500",
-          "bg-orange-500",
-        ];
 
-        console.log(colors)
-
-        const color = defaultColor || `bg-${element.color}-500`;
+        const color = defaultColor || (element.color === "white" ? "bg-white" : `bg-${element.color}-500`);
 
         return (         
           <motion.div
@@ -139,9 +131,9 @@ export default function Timeline({ defaultColor }: any) {
                 className={`${color} w-px h-full translate-x-5 translate-y-10 opacity-30`}
               ></div>
               <motion.img
-                src={element.icon === "school" ? schoolIcon : workIcon}
+                src={element.icon === "school" ? schoolIcon : (element.icon === "amikus" ? amikus : (element.icon === "pulsegen" ? pulseLogo : workIcon))}
                 alt="icon"
-                className={`${color} w-8 sm:w-10 p-1 rounded-lg z-20`}
+                className={`${color} ${element.icon === "pulsegen" ? "w-10 sm:w-12" : "w-8 sm:w-10"} p-1 rounded-lg z-20`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               />
