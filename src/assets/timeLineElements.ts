@@ -7,7 +7,7 @@ const timelineElements = [
     buttonText: "Details",
     date: "August 2019 - July 2023",
     icon: "school",
-    color: "blue",
+    color: "white",
     tech: ["Python", "React", "HTML/CSS", "JavaScript", "SQL", "Data Structures", "Algorithms"],
     logo: "school"
   },
@@ -36,19 +36,19 @@ const timelineElements = [
     logo: "amikus"
   },
   {
-    id: 5,
+    id: 4,
     title: "Part-time Freelancer",
     location: "Remote (based in Hyderabad, India)",
     description: "Began working as a freelance developer",
     buttonText: "Details",
     date: "2024-present",
     icon: "work",
-    color: "orange",
+    color: "white",
     tech: ["JavaScript", "React", "HTML", "CSS", "Python", "TypeScript", "Context API"],
     logo: "work"
   },
   {
-    id: 6,
+    id: 5,
     title: "SDE at Pulsegen.io",
     location: "Based in Hyderabad, India",
     description: "Built end-to-end customer analytics platform with real-time churn prediction, optimized performance reducing page load times by 90%+.",
