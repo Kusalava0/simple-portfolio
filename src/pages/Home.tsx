@@ -21,7 +21,7 @@ const TABS = [
           Hey! I'm Kusalava Badrinath.
         </TextEffect>
         <TextEffect per='char' preset='fade' className="text-2xl">
-          I'm a Software Developer, a UI/UX designer & a Freelancer.
+          I'm a Software Developer, a Design Engineer & a Freelancer.
         </TextEffect>
         <a target='_blank' href='https://drive.google.com/file/d/1vjFUFDwikvuL_23ygm4TUOCilA1-Sipm/view?usp=sharing' download className='btn flex items-center gap-4'><MoveRight className='h-5 w-5 mt-1'/><TextEffect className="text-2xl">My Resume</TextEffect></a>
       </div>
@@ -72,8 +72,8 @@ const Home: React.FC = () => {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const virtualScrollPosition = useRef(0);
-  const tabHeight = 100; // Virtual height for each tab
+  const lastTabChangeTime = useRef(0);
+  const TAB_SWITCH_COOLDOWN = 500; // Minimum time between tab switches in ms
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
@@ -84,15 +84,22 @@ const Home: React.FC = () => {
 
         if ((isScrolledToTop && e.deltaY < 0) || (isScrolledToBottom && e.deltaY > 0)) {
           e.preventDefault();
-          
-          virtualScrollPosition.current += e.deltaY;
-          const newTabIndex = Math.floor(virtualScrollPosition.current / tabHeight) % TABS.length;
-          const newActiveTab = TABS[newTabIndex < 0 ? TABS.length + newTabIndex : newTabIndex].id;
-          
-          setScrollDirection(e.deltaY > 0 ? 'down' : 'up');
-          
-          if (newActiveTab !== activeTab) {
-            setActiveTab(newActiveTab);
+
+          const now = Date.now();
+          if (now - lastTabChangeTime.current >= TAB_SWITCH_COOLDOWN) {
+            const currentIndex = TABS.findIndex(tab => tab.id === activeTab);
+            const direction = e.deltaY > 0 ? 'down' : 'up';
+            let newIndex = currentIndex;
+
+            if (direction === 'down') {
+              newIndex = (currentIndex + 1) % TABS.length;
+            } else {
+              newIndex = currentIndex === 0 ? TABS.length - 1 : currentIndex - 1;
+            }
+
+            setScrollDirection(direction);
+            setActiveTab(TABS[newIndex].id);
+            lastTabChangeTime.current = now;
           }
         }
       }
@@ -113,8 +120,7 @@ const Home: React.FC = () => {
   const handleTabChange = (newActiveId: string | null) => {
     if (newActiveId) {
       setActiveTab(newActiveId);
-      const newIndex = TABS.findIndex(tab => tab.id === newActiveId);
-      virtualScrollPosition.current = newIndex * tabHeight;
+      lastTabChangeTime.current = Date.now();
     }
   };
 
